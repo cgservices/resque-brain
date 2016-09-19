@@ -9,23 +9,31 @@ gem 'jbuilder', '~> 2.0'
 gem 'spring',        group: :development
 gem 'bower-rails'
 gem 'resque', github: 'resque/resque', branch: 'master'#'https://github.com/stitchfix/resque.git', branch: 'resque-redis-interface'
-gem 'angular-rails-templates', git: "https://github.com/davetron5000/angular-rails-templates.git", branch: "patch-1"
-gem 'unicorn'
-gem "foreman"
-gem "cron2english"
+gem 'angular-rails-templates', git: 'https://github.com/davetron5000/angular-rails-templates.git', branch: 'patch-1'
+gem 'statsd-instrument', git: 'git@github.com:Shopify/statsd-instrument.git'
+gem 'foreman'
+gem 'cron2english'
 
 group :test, :development do
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem "teaspoon-jasmine"
-  gem "dotenv-rails"
-  gem "poltergeist"
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'teaspoon-jasmine'
+  gem 'dotenv-rails'
+  gem 'poltergeist'
+
+  #Pry is a powerful alternative to the standard IRB shell for Ruby. (debugging)
+  gem 'pry'
+  gem 'pry-nav'
+  gem 'pry-rescue'
+  gem 'pry-coolline'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
 end
 
 group :production, :staging do
-    gem "rails_12factor"
-    gem "rails_stdout_logging"
-    gem "rails_serve_static_assets"
+    gem 'rails_12factor'
+    gem 'rails_stdout_logging'
+    gem 'rails_serve_static_assets'
 end
 
 gem 'nokogiri', '>= 1.6.7.2'

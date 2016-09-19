@@ -33,5 +33,14 @@ module ResqueBrain
         true
       end
     }
+
+    def name
+      Rails.application.config.session_options[:key].sub(/^_/,'').sub(/_session/,'')
+    end
+
+    def name_space
+      "#{Rails.env}.#{Socket.gethostname}.#{name}"
+    end
+
   end
 end

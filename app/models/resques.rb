@@ -11,7 +11,7 @@ class Resques
   # Parses the environment, yielding each configured instance to the block
   def self.from_environment
     self.new(String(ENV["RESQUE_BRAIN_INSTANCES"]).split(/\s*,\s*/).map { |instance_name|
-      redis = Redis::Namespace.new(:resque,redis: Redis.new(url: ResqueUrl.new(instance_name).url))
+      redis = Redis::Namespace.new( "resque:#{instance_name}",redis: Redis.new(url: ResqueUrl.new(instance_name).url))
       ResqueInstance.new(name: instance_name, resque_data_store: Resque::DataStore.new(redis))
     })
   end

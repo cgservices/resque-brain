@@ -52,6 +52,11 @@ class ResqueInstance
     }]
   end
 
+  # Return all workers that are currently running as an array of `RunningJob` instances
+  def workers_running
+    Array(@resque_data_store.worker_ids)
+  end
+
   # Return all jobs that are currently running as an array of `RunningJob` instances
   def jobs_running
     worker_ids = Array(@resque_data_store.worker_ids)
@@ -137,6 +142,8 @@ class ResqueInstance
   def clear_all
     @resque_data_store.clear_failed_queue
   end
+
+
 
   def kill_worker(worker_id)
     raise
