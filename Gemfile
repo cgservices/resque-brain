@@ -14,6 +14,7 @@ gem 'statsd-instrument', git: 'git@github.com:Shopify/statsd-instrument.git'
 gem 'foreman'
 gem 'cron2english'
 gem 'whenever'
+gem 'dotenv-rails'
 
 group :test, :development do
   gem 'capybara'
