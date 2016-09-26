@@ -30,4 +30,5 @@ set :branch, 'master'
 set :bundle_jobs, 2
 
 # Symlink environment fil to application root
-set :linked_files, fetch(:linked_files, []) + %w{staging.env}
+set :linked_files, fetch(:linked_files, []) + %w{.env}
+set :linked_files, fetch(:linked_files, []) + %w{config/secrets.yml}
