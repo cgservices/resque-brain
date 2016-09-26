@@ -19,12 +19,12 @@
 
 # Learn more: http://github.com/javan/whenever
 
-@log_settings = ">> ~/cg_agent/shared/log/cron.log"
+@log_settings = ">> ~/resque-brain/shared/log/cron.log"
 
 case @environment
   when 'staging'
 
-   default_command = "cd #{@path} && rvm use ruby-2.2.2@cg_agent && RAILS_ENV=#{@environment} bundle exec rake "
+   default_command = "cd #{@path} && rvm use ruby-2.2.2@resque-brain && RAILS_ENV=#{@environment} bundle exec rake "
 
    every 1.minute do
       command "#{default_command} monitor:failed #{@log_settings}"
