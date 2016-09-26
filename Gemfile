@@ -13,6 +13,7 @@ gem 'angular-rails-templates', git: 'https://github.com/davetron5000/angular-rai
 gem 'statsd-instrument', git: 'git@github.com:Shopify/statsd-instrument.git'
 gem 'foreman'
 gem 'cron2english'
+gem 'whenever'
 
 group :test, :development do
   gem 'capybara'
@@ -20,6 +21,7 @@ group :test, :development do
   gem 'teaspoon-jasmine'
   gem 'dotenv-rails'
   gem 'poltergeist'
+  gem 'cg_capistrano', git: 'git@github.com:cgservices/cg_capistrano.git'
 
   #Pry is a powerful alternative to the standard IRB shell for Ruby. (debugging)
   gem 'pry'
