@@ -15,9 +15,16 @@ module Monitoring
     def notify!(check_results)
       check_results.each do |check_result|
         if check_result.is_a?(Array)
+          results = Hash.new
           check_result.each do |sub_result|
-            source = [sub_result.resque_name,sub_result.scope].compact.join(".")
-            log_to_statsd(source,@type,sub_result.check_name,sub_result.check_count)
+            counter = 0
+            counter = results[sub_result.check_name][:counter] unless results[sub_result.check_name].nil?
+            results[sub_result.check_name] = { name: sub_result.check_name,
+                                               source: [sub_result.resque_name,sub_result.scope].compact.join("."),
+                                               counter: counter + sub_result.check_count}
+          end
+          results.each do |key, value|
+            log_to_statsd(value[:source], @type, value[:name], value[:counter])
           end
         else
           source = [check_result.resque_name,check_result.scope].compact.join(".")
