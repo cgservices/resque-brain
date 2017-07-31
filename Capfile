@@ -17,13 +17,13 @@ require 'capistrano/deploy'
 #
 require 'capistrano/rvm'
 require 'capistrano/bundler'
-require 'capistrano/rails/assets'
-require 'capistrano/passenger'
-require 'capistrano/maintenance'
+#require 'capistrano/rails/assets'
+#require 'capistrano/passenger'
+#require 'capistrano/maintenance'
 #require 'capistrano/faster_assets'
 
 # Include tasks form CGCapistrano
-require 'cg_capistrano/assets'
+#require 'cg_capistrano/assets'
 #require 'cg_capistrano/database'
 #require 'cg_capistrano/deface'
 #require 'cg_capistrano/rails'

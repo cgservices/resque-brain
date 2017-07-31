@@ -10,7 +10,7 @@ set :deploy_to, "/data/www/#{fetch(:application)}"
 # Using Creative Group Capistrano recipes
 require 'cg_capistrano/recipes/default'
 #require 'cg_capistrano/recipes/database'
-require 'cg_capistrano/recipes/assets'
+#require 'cg_capistrano/recipes/assets'
 #require 'cg_capistrano/recipes/spree'
 require 'cg_capistrano/recipes/whenever'
 #require 'cg_capistrano/recipes/resque'
